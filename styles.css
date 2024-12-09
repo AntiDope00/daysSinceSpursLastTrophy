@@ -1,0 +1,270 @@
+
+* {
+    margin: 0;
+    padding: 1000;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+ .top-bar {
+    background-color: #1E2551ff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    position: absolute;
+    top: 0;
+    right: 50px; /* Space from the right edge */
+    height: 100px; /* Ensure vertical centering works */
+    display: flex;
+    align-items: center; /* Vertically center the logo */
+    color: #1E2551ff;
+}
+
+
+.logo img {
+    width:100px; /* Set logo width */
+    height: auto; /* Maintain aspect ratio */
+    color:#1E2551ff;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #f4f4f4;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+/* Side Panel */
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #1E2551ff;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+    z-index: 1000;
+  }
+  
+  .side-panel ul {
+    list-style: none;
+  }
+  
+  .side-panel ul li {
+    margin: 20px 0;
+  }
+  
+  .side-panel ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .side-panel.open {
+    left: 0; /* Slide the panel into view */
+  }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999;
+    display: none; /* Initially hidden */
+  }
+  
+  .overlay.show {
+    display: block; /* Show the overlay when panel is open */
+  }
+
+  .message{
+    color: #1E2551ff;
+    position: fixed;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    text-decoration:double;
+    top:-150px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+
+
+
+  }
+  
+  .counter {
+    color: #1E2551ff;
+    position: fixed;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    text-decoration:double;
+    top:-60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 250px;
+    padding: 20px;
+    
+
+  }
+ 
+  
+  .time-part {
+    text-align: center;
+  }
+  
+.time-unit {
+    display: block;
+    font-size: 80px;
+    font-weight: bold;
+    background-color: #222;
+    padding: 10px;
+ 
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .time-part span {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 160px;
+    text-align: center;
+    font-size: 50px;
+    background-color:  #1E2551ff;
+    color: white;
+  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .time-unit:hover {
+    transform: rotateX(180deg);
+    background-color: #e91e63;
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1E2551ff;
+    color: white;
+    text-align: center;
+  }
+ 
+  /* Row Styling - Centering the collage */
+  .row {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next row */
+    gap: 0; /* Remove any space between images */
+    justify-content: center; /* Center the images horizontally */
+    width: 80%; /* Limit the width of the collage */
+    margin-top: 120px; /* Move images down from the top */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Column Styling */
+  .column {
+    display: flex;
+    flex-wrap: wrap; /* Wrap images to the next line */
+    gap: 0; /* Remove space between images */
+    width: 100%; /* Default for full width on mobile */
+    justify-content: center; /* Ensure images inside the column are centered */
+  }
+  
+  .column img {
+    width: 200px; /* Set a small fixed width */
+    height: 200px; /* Set a fixed height to match width */
+    object-fit: cover; /* Ensures the image covers the defined space while maintaining aspect ratio */
+    margin: 2px; /* Optional: Adds small margin between images */
+    padding: 0; /* Remove padding around images */
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #1E2551ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Ensure text is centered inside the button */
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  /* Centered button container */
+  .button-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the buttons */
+    margin-top: 20px; /* Space between the images and the buttons */
+    position: fixed; /* Fixed position for buttons */
+    bottom: 250px; /* 20px from the bottom of the page */
+    width: 100%; /* Ensure the buttons stretch across the page */
+    z-index: 1000; /* Ensure buttons are above the images */
+  }
+  
+  /* Layout for full width */
+  .column.full {
+    flex: 100%;
+  }
+  
+  /* Layout for 50% width */
+  .column.half {
+    flex: 50%;
+  }
+  
+ 
+
+  
