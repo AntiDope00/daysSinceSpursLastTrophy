@@ -15,21 +15,21 @@ function menuButton(x) {
 }
 
 function closeSidePanel() {
- // Remove the "change" class from the hamburger menu
+ // Remove change class from the hamburger menu
  const menuButton = document.querySelector(".container");
  menuButton.classList.remove("change");
 
- // Close the side panel
+ // Close side panel
  const sidePanel = document.getElementById("side-panel");
  sidePanel.classList.remove("open");
 
- // Hide the overlay
+ // Hide overlay
  const overlay = document.getElementById("overlay");
  overlay.classList.remove("show");
 }
 
 function counterDays() {
-  const last = new Date("2008-02-24"); // Reference date
+  const last = new Date("2008-02-24"); // last day we won 
 
   const updateCounter = () => {
     const now = new Date(); // Get current date and time each time the function runs
@@ -76,12 +76,11 @@ function counterDays() {
   setInterval(updateCounter, 1000);
 }
 
-// Call the function on page load
+// Call function on page load
 window.onload = counterDays;
 
 var elements = document.getElementsByClassName("column");
-    
-// Declare a "loop" variable
+
 var i;
 
 // Full-width images
