@@ -1,0 +1,300 @@
+
+* {
+    margin: 0;
+    padding: 1000;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+ .top-bar {
+    background-color: #1E2551ff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    position: absolute;
+    top: 0;
+    right: 50px; /* Space from the right edge */
+    height: 100px; /* Ensure vertical centering works */
+    display: flex;
+    align-items: center; /* Vertically center the logo */
+    color: #1E2551ff;
+}
+
+
+.logo img {
+    width:100px; /* Set logo width */
+    height: auto; /* Maintain aspect ratio */
+    color:#1E2551ff;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #f4f4f4;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+/* Side Panel */
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #1E2551ff;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+    z-index: 1000;
+  }
+  
+  .side-panel ul {
+    list-style: none;
+  }
+  
+  .side-panel ul li {
+    margin: 20px 0;
+  }
+  
+  .side-panel ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .side-panel.open {
+    left: 0; /* Slide the panel into view */
+  }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999;
+    display: none; /* Initially hidden */
+  }
+  
+  .overlay.show {
+    display: block; /* Show the overlay when panel is open */
+  }
+
+  .message{
+    color: #1E2551ff;
+    position: fixed;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    text-decoration:double;
+    top:-150px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+
+
+
+  }
+  
+  .counter {
+    color: #1E2551ff;
+    position: fixed;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    text-decoration:double;
+    top:-60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 250px;
+    padding: 20px;
+    
+
+  }
+ 
+  
+  .time-part {
+    text-align: center;
+  }
+  
+.time-unit {
+    display: block;
+    font-size: 80px;
+    font-weight: bold;
+    background-color: #222;
+    padding: 10px;
+ 
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .time-part span {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 160px;
+    text-align: center;
+    font-size: 50px;
+    background-color:  #1E2551ff;
+    color: white;
+  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .time-unit:hover {
+    transform: rotateX(180deg);
+    background-color: #e91e63;
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1E2551ff;
+    color: white;
+    text-align: center;
+  }
+/* Row Styling - Centering the collage */
+/* Flip card container */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px; /* Creates the 3D effect */
+  width: 200px; /* Ensure the flip card takes up the same space as images */
+  height: 200px; /* Same height as images */
+  margin: 10px; /* Space between cards */
+  display: inline-block; /* Ensure it aligns like an image */
+}
+
+/* Flip card inner wrapper */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d; /* Maintain 3D perspective */
+}
+
+/* Trigger the flip on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Rotate the card to reveal the back */
+}
+
+/* Front face of the card */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back when the front is visible */
+  border-radius: 10px; /* Optional: rounded corners */
+  overflow: hidden; /* Keep content within bounds */
+}
+
+/* Front styling */
+.flip-card-front {
+  background-color: #fff; /* Optional background for the front */
+}
+
+/* Back styling */
+.flip-card-back {
+  background-color: #1E2551; /* Deep blue for the back */
+  color: white; /* White text for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg); /* Position the back face */
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Image styling inside flip card */
+.flip-card img {
+  width: 100%; /* Full width of the card */
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and fill the card */
+  border-radius: 10px; /* Match the card's rounded corners */
+}
+
+/* Row Styling - Centering the collage */
+.row {
+display: flex;
+flex-wrap: wrap; /* Allow images to wrap to the next row */
+gap: 15px; /* Add stylish spacing between images */
+justify-content: center; /* Center the images horizontally */
+width: 85%; /* Limit the width of the collage */
+margin-top: 120px; /* Move images down from the top */
+margin-left: auto;
+margin-right: auto;
+animation: fadeIn 1s ease-in-out; /* Smooth fade-in animation for the row */
+}
+
+/* Column Styling */
+.column {
+display: flex;
+flex-wrap: wrap; /* Wrap images to the next line */
+gap: 15px; /* Add spacing between images */
+justify-content: center; /* Ensure images inside the column are centered */
+width: 100%; /* Default for full width on mobile */
+max-width: 100%; /* Ensure no column overflows */
+}
+
+/* Styling individual images */
+.column img,
+.flip-card {
+width: 200px; /* Ensure images and flip-cards have consistent size */
+height: 200px; /* Set a fixed height to match width */
+object-fit: cover; /* Ensures the image covers the defined space while maintaining aspect ratio */
+border-radius: 10px; /* Add rounded corners to the images */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.column img:hover,
+.flip-card:hover {
+transform: scale(1.05); /* Slight zoom effect on hover */
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Intensify shadow on hover */
+cursor: pointer; /* Change cursor to pointer */
+}
