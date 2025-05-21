@@ -29,7 +29,7 @@ overlay.classList.remove("show");
 }
 
 function counterDays() {
-const last = new Date("2025-05-22"); // last day we won 
+const last = new Date("2025-05-21"); // last day we won 
 
 const updateCounter = () => {
   const now = new Date(); // Get current date and time each time the function runs
