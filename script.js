@@ -38,7 +38,7 @@ const updateCounter = () => {
 
   const differenceInSeconds = Math.floor(differenceInMS / 1000); // Total seconds
   const differenceInMinutes = Math.floor(differenceInSeconds / 60); // Total minutes
-  const differenceInHours = Math.floor(differenceInMinutes / 60); // Total hours
+  const differenceInHours = Math.floor(differenceInMinutes / 60)-21; // Total hours
   const differenceInDays = Math.floor(differenceInHours / 24); // Total days
 
   const remainingHours = differenceInHours % 24; // Remaining hours
